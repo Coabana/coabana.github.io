@@ -36,9 +36,9 @@ Conectado a [Formspree](https://formspree.io) (proyecto **Coabana** → formular
 1. Haz merge de este contenido a la rama `main`.
 2. En GitHub: **Settings → Pages → Build and deployment**.
 3. En *Source* elige **Deploy from a branch**, rama `main`, carpeta `/ (root)` y guarda.
-4. En unos minutos el sitio estará en **`https://coabana.github.io/coabana/`**.
+4. En unos minutos el sitio estará en **`https://coabana.github.io/`**.
 
-> 💡 **URL más corta**: si renombras este repositorio a `Coabana.github.io`, el sitio se publica en la raíz: `https://coabana.github.io/`. Todos los enlaces internos son relativos, así que funciona sin cambios (solo actualiza las URLs de `og:url` y el JSON-LD en `index.html`).
+> 💡 Este repositorio se llama `coabana.github.io`, así que GitHub Pages lo publica en la **raíz** del dominio de la organización (es el "sitio de organización"; cualquier otro nombre de repo publicaría en un subdirectorio `/nombre/`).
 
 ## Probar en local
 
