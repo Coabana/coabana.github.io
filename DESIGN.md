@@ -18,7 +18,7 @@ Si cambias un token aquí, replica el cambio en el CV para mantener la familia a
 | `--panel` | `#0d2030` | `#fffdf8` | Paneles destacados |
 | `--panel-2` | `#102638` | `#fbf7ee` | Paneles secundarios |
 | `--ink` | `#eaf4f4` | `#0d2531` | Texto principal |
-| `--muted` | `#93adbc` | `#51707e` | Texto secundario |
+| `--muted` | `#93adbc` | `#48616e` | Texto secundario |
 | `--turquoise` | `#2fd6c3` | `#0b8b7d` | Acento principal (enlaces, énfasis) |
 | `--cyan` | `#4cc9f0` | `#0f7ea6` | Acento secundario (gradientes) |
 | `--coral` | `#ff8f6b` | `#c94b28` | Kickers, detalles cálidos |
