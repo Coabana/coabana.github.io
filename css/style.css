@@ -1042,19 +1042,14 @@ html.js .reveal.visible {
   .contact-grid { grid-template-columns: 1fr; }
   .section { padding: 72px 0; }
 
-  /* Las etiquetas flotantes no caben flotando sobre la isla:
-     pasan a fila estática debajo de la tarjeta */
-  .hero-visual {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .island-card { flex-basis: 100%; margin-bottom: 8px; }
-
+  /* Las etiquetas siguen flotando sobre la isla como en escritorio,
+     con tamaño y offsets ajustados para pantallas estrechas */
   .float-chip {
-    position: static;
-    animation: none;
+    font-size: 0.78rem;
+    padding: 8px 12px;
   }
+
+  .chip-a { top: -14px; right: 10px; }
+  .chip-b { bottom: 74px; left: -6px; }
+  .chip-c { bottom: -14px; right: 14px; }
 }
