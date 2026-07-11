@@ -22,6 +22,20 @@
 
   <link rel="stylesheet" href="css/style.css">
 
+  <!-- Tema antes del primer render, para evitar parpadeos -->
+  <script>
+  (function(){
+    var t = null;
+    try {
+      t = new URLSearchParams(location.search).get('theme') || localStorage.getItem('coabana-theme');
+    } catch (e) { /* modo privado */ }
+    if (t !== 'light' && t !== 'dark') {
+      t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+    }
+    if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  })();
+  </script>
+
   <!-- JSON-LD -->
   <script type="application/ld+json">
   {
@@ -79,6 +93,7 @@
 
       <div class="nav-actions">
         <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch to English">EN</button>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema" data-i18n-aria-label="nav.theme">🌙</button>
         <a class="btn btn-primary btn-small" href="#contact" data-i18n="nav.cta">Hablemos</a>
         <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menú" aria-expanded="false" data-i18n-aria-label="nav.menu">
           <span></span><span></span><span></span>

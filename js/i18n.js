@@ -16,6 +16,7 @@ const I18N = {
     "nav.contact": "Contacto",
     "nav.cta": "Hablemos",
     "nav.menu": "Abrir menú",
+    "nav.theme": "Cambiar tema claro/oscuro",
 
     "hero.badge": "Ingeniería de datos · Google Cloud",
     "hero.h1a": "Del dato crudo",
@@ -141,6 +142,7 @@ const I18N = {
     "nav.contact": "Contact",
     "nav.cta": "Let's talk",
     "nav.menu": "Open menu",
+    "nav.theme": "Toggle light/dark theme",
 
     "hero.badge": "Data engineering · Google Cloud",
     "hero.h1a": "From raw data",

@@ -72,6 +72,42 @@ document.getElementById("langToggle").addEventListener("click", () => {
 
 applyLang(currentLang);
 
+/* ── Tema claro / oscuro ──────────────────────────────── */
+const THEME_KEY = "coabana-theme";
+
+function detectTheme() {
+  const urlTheme = new URLSearchParams(location.search).get("theme");
+  if (urlTheme === "light" || urlTheme === "dark") return urlTheme;
+  try {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved === "light" || saved === "dark") return saved;
+  } catch (e) { /* modo privado */ }
+  return window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches
+    ? "light"
+    : "dark";
+}
+
+let currentTheme = detectTheme();
+
+function applyTheme(theme) {
+  currentTheme = theme;
+  if (theme === "light") document.documentElement.setAttribute("data-theme", "light");
+  else document.documentElement.removeAttribute("data-theme");
+  try { localStorage.setItem(THEME_KEY, theme); } catch (e) { /* modo privado */ }
+
+  const themeBtn = document.getElementById("themeToggle");
+  if (themeBtn) themeBtn.textContent = theme === "light" ? "☀️" : "🌙";
+
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute("content", theme === "light" ? "#f7f4ec" : "#07131d");
+}
+
+document.getElementById("themeToggle").addEventListener("click", () => {
+  applyTheme(currentTheme === "light" ? "dark" : "light");
+});
+
+applyTheme(currentTheme);
+
 /* ── Navegación: fondo al hacer scroll ────────────────── */
 const nav = document.getElementById("nav");
 

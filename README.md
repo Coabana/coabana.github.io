@@ -9,7 +9,7 @@ Construido con HTML, CSS y JavaScript puros — sin frameworks ni paso de build.
 ```
 ├── index.html          # Toda la página (una sola página con secciones)
 ├── 404.html            # Página de error
-├── css/style.css       # Estilos (tema caribeño-tech oscuro)
+├── css/style.css       # Estilos (tema caribeño-tech, oscuro y claro)
 ├── js/i18n.js          # ✏️ TEXTOS del sitio en español e inglés
 ├── js/main.js          # Idioma, menú, animaciones y formulario
 └── assets/             # Logo y favicon (SVG)
@@ -20,6 +20,10 @@ Construido con HTML, CSS y JavaScript puros — sin frameworks ni paso de build.
 Todos los textos viven en **`js/i18n.js`**, en dos diccionarios (`es` y `en`) con las mismas claves. Edita el valor de la clave en ambos idiomas y listo. El HTML tiene el texto en español como contenido por defecto (por si JavaScript no carga); si cambias algo grande, actualízalo también en `index.html` para mantenerlos alineados.
 
 El idioma se detecta automáticamente (navegador → `es`/`en`), se puede forzar con `?lang=en` o `?lang=es` en la URL, y el visitante puede cambiarlo con el botón **EN/ES** del menú.
+
+## Tema claro / oscuro
+
+El sitio arranca según la apariencia del sistema del visitante (oscuro por defecto), se puede forzar con `?theme=light` o `?theme=dark` en la URL, y el visitante puede cambiarlo con el botón **🌙/☀️** del menú (la elección se recuerda). El tema claro es la variante "caribe de día": misma paleta sobre arena/papel. Los colores de ambos temas viven en las variables CSS del inicio de `css/style.css`.
 
 ## Formulario de contacto
 
