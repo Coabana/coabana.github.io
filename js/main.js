@@ -176,6 +176,15 @@ document.getElementById("year").textContent = new Date().getFullYear();
 /* ── Formulario de contacto ───────────────────────────── */
 const form = document.getElementById("contactForm");
 const statusEl = document.getElementById("formStatus");
+const submitBtn = form.querySelector('button[type="submit"]');
+const FIELDS = ["name", "email", "message"];
+
+// El error de un campo se limpia en cuanto el visitante lo corrige
+FIELDS.forEach((n) =>
+  form.elements[n].addEventListener("input", () =>
+    form.elements[n].removeAttribute("aria-invalid")
+  )
+);
 
 function setStatus(key, kind) {
   statusEl.textContent = I18N[currentLang][key] || "";
@@ -189,7 +198,9 @@ form.addEventListener("submit", async (e) => {
   const email = form.elements.email.value.trim();
   const message = form.elements.message.value.trim();
 
-  if (!name || !email || !message) {
+  const missing = FIELDS.filter((n) => !form.elements[n].value.trim());
+  if (missing.length) {
+    missing.forEach((n) => form.elements[n].setAttribute("aria-invalid", "true"));
     setStatus("form.invalid", "err");
     return;
   }
@@ -210,7 +221,9 @@ form.addEventListener("submit", async (e) => {
     return;
   }
 
+  // Mientras se envía, el botón queda deshabilitado (evita el doble envío)
   setStatus("form.sending");
+  submitBtn.disabled = true;
 
   try {
     const res = await fetch(FORM_ENDPOINT, {
@@ -223,5 +236,7 @@ form.addEventListener("submit", async (e) => {
     form.reset();
   } catch (err) {
     setStatus("form.err", "err");
+  } finally {
+    submitBtn.disabled = false;
   }
 });
