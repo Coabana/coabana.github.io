@@ -7,7 +7,7 @@
 const I18N = {
   es: {
     "meta.title": "Coabana — Ingeniería de Datos en Google Cloud",
-    "meta.desc": "Coabana diseña, construye y opera plataformas de datos en Google Cloud: BigQuery, Dataflow, Cloud Composer, Looker, Knowledge Catalog y agentes de IA sobre tus datos.",
+    "meta.desc": "Coabana diseña, construye y opera plataformas de datos en Google Cloud: BigQuery, Dataflow, Composer, Looker y agentes de IA sobre tus datos.",
 
     "nav.services": "Servicios",
     "nav.stack": "Stack",
@@ -133,7 +133,7 @@ const I18N = {
 
   en: {
     "meta.title": "Coabana — Data Engineering on Google Cloud",
-    "meta.desc": "Coabana designs, builds and operates data platforms on Google Cloud: BigQuery, Dataflow, Cloud Composer, Looker, Knowledge Catalog and AI agents grounded in your data.",
+    "meta.desc": "Coabana designs, builds and operates data platforms on Google Cloud: BigQuery, Dataflow, Composer, Looker and AI agents grounded in your data.",
 
     "nav.services": "Services",
     "nav.stack": "Stack",
