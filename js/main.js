@@ -95,8 +95,14 @@ function applyTheme(theme) {
   else document.documentElement.removeAttribute("data-theme");
   try { localStorage.setItem(THEME_KEY, theme); } catch (e) { /* modo privado */ }
 
+  // El botón muestra el tema al que se puede cambiar (como el de idioma)
   const themeBtn = document.getElementById("themeToggle");
-  if (themeBtn) themeBtn.textContent = theme === "light" ? "☀️" : "🌙";
+  if (themeBtn) {
+    themeBtn.textContent = theme === "light" ? "🌙" : "☀️";
+    const ariaKey = theme === "light" ? "nav.themeDark" : "nav.themeLight";
+    themeBtn.setAttribute("data-i18n-aria-label", ariaKey);
+    themeBtn.setAttribute("aria-label", I18N[currentLang][ariaKey]);
+  }
 
   const meta = document.querySelector('meta[name="theme-color"]');
   if (meta) meta.setAttribute("content", theme === "light" ? "#f7f4ec" : "#07131d");

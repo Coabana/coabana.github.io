@@ -84,7 +84,8 @@ Las animaciones decorativas (pulse 2.4s, floaty 5.5s, flow 3.2/4.1s) quedan fuer
 
 ### Navegación
 - Fija con blur; `.scrolled` añade borde y sube opacidad de fondo
-- `.lang-toggle` / `.theme-toggle`: píldoras mono turquesa (el de idioma muestra el idioma destino; el de tema muestra 🌙/☀️), `aria-label` bilingüe vía i18n
+- `.lang-toggle` / `.theme-toggle`: píldoras mono turquesa con **semántica de destino** — ambos muestran lo que obtienes al pulsar: el idioma al que cambias ("ES"/"EN") y el tema que activarás (☀️ en oscuro, 🌙 en claro) — con `aria-label` dinámico y bilingüe
+- CTA `.btn-primary.btn-small` → `#contact` ("Hablemos"/"Let's talk") en el nav de **ambos** sitios; oculto ≤720px
 - Hamburguesa ≤720px con `aria-expanded` y cierre al navegar
 
 ### Formulario (solo Coabana)
