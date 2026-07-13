@@ -63,7 +63,7 @@ const I18N = {
 
     "stack.kicker": "Herramientas",
     "stack.title": "El portafolio de datos de Google Cloud, al día",
-    "stack.sub": "Google renombra sus productos con frecuencia; en Coabana los seguimos de cerca. Estos son los nombres vigentes — y para qué sirve cada uno.",
+    "stack.sub": "De la ingesta a los agentes, los servicios con los que construimos — y para qué sirve cada uno.",
     "stack.g1": "Ingesta",
     "stack.g1a": "mensajería y eventos",
     "stack.g1b": "CDC y réplica continua",
@@ -197,7 +197,7 @@ const I18N = {
 
     "stack.kicker": "Tooling",
     "stack.title": "The Google Cloud data portfolio, up to date",
-    "stack.sub": "Google renames its products often; at Coabana we track them closely. These are the current names — and what each one is for.",
+    "stack.sub": "From ingestion to agents, the services we build with — and what each one is for.",
     "stack.g1": "Ingestion",
     "stack.g1a": "messaging and events",
     "stack.g1b": "CDC and continuous replication",
