@@ -83,7 +83,7 @@ const I18N = {
     "stack.g5": "Gobierno",
     "stack.g5a": "catálogo, linaje y calidad",
     "stack.g5was": "antes Dataplex Universal Catalog",
-    "stack.g5b": "clasificación, enmascarado y de-identificación",
+    "stack.g5b": "clasificación, enmascaramiento y desidentificación",
     "stack.g5bwas": "antes Cloud DLP",
     "stack.g6": "BI y visualización",
     "stack.g6a": "BI y capa semántica",
