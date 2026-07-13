@@ -7,7 +7,7 @@
 const I18N = {
   es: {
     "meta.title": "Coabana — Ingeniería de Datos en Google Cloud",
-    "meta.desc": "Coabana diseña, construye y opera plataformas de datos en Google Cloud: BigQuery, Dataflow, Composer, Looker y agentes de IA sobre tus datos.",
+    "meta.desc": "Coabana diseña, construye y opera plataformas de datos en Google Cloud: BigQuery, Dataflow, Composer, Looker y agentes sobre tus datos.",
 
     "nav.services": "Servicios",
     "nav.stack": "Stack",
@@ -23,7 +23,7 @@ const I18N = {
     "hero.h1a": "Del dato crudo",
     "hero.h1b": "a la ",
     "hero.h1c": "decisión.",
-    "hero.sub": "Coabana es un estudio de ingeniería de datos especializado en Google Cloud. Diseñamos, construimos y operamos la plataforma que convierte tus datos en resultados: pipelines confiables, analítica clara y agentes de IA sobre tu propia información.",
+    "hero.sub": "Coabana es un estudio de ingeniería de datos especializado en Google Cloud. Diseñamos, construimos y operamos la plataforma que convierte tus datos en resultados: pipelines confiables, analítica clara y agentes sobre tu propia información.",
     "hero.cta1": "Hablemos de tu proyecto",
     "hero.cta2": "Ver servicios",
     "hero.strip": "Construido sobre",
@@ -110,7 +110,7 @@ const I18N = {
     "about.kicker": "El fundador",
     "about.title": "Detrás de Coabana",
     "about.p1": "Soy Roanny Lamas, Ingeniero de Datos especializado en el ecosistema de datos de Google Cloud. Fundé Coabana para ofrecer, con nombre propio, lo que mejor sé hacer: plataformas de datos bien diseñadas, bien construidas y bien operadas.",
-    "about.p2": "Trabajo de punta a punta: arquitectura, pipelines, gobierno, BI y agentes de IA. Si tu proyecto vive en Google Cloud — o quiere mudarse — hablemos.",
+    "about.p2": "Trabajo de punta a punta: arquitectura, pipelines, gobierno, BI y agentes. Si tu proyecto vive en Google Cloud — o quiere mudarse — hablemos.",
     "about.link1": "GitHub personal",
     "about.link3": "Coabana en GitHub",
     "about.link4": "Mi CV / portafolio",
@@ -141,7 +141,7 @@ const I18N = {
 
   en: {
     "meta.title": "Coabana — Data Engineering on Google Cloud",
-    "meta.desc": "Coabana designs, builds and operates data platforms on Google Cloud: BigQuery, Dataflow, Composer, Looker and AI agents grounded in your data.",
+    "meta.desc": "Coabana designs, builds and operates data platforms on Google Cloud: BigQuery, Dataflow, Composer, Looker and agents grounded in your data.",
 
     "nav.services": "Services",
     "nav.stack": "Stack",
@@ -157,7 +157,7 @@ const I18N = {
     "hero.h1a": "From raw data",
     "hero.h1b": "to ",
     "hero.h1c": "decisions.",
-    "hero.sub": "Coabana is a data engineering studio specialized in Google Cloud. We design, build and operate the platform that turns your data into results: reliable pipelines, clear analytics and AI agents grounded in your own information.",
+    "hero.sub": "Coabana is a data engineering studio specialized in Google Cloud. We design, build and operate the platform that turns your data into results: reliable pipelines, clear analytics and agents grounded in your own information.",
     "hero.cta1": "Let's talk about your project",
     "hero.cta2": "See services",
     "hero.strip": "Built on",
@@ -244,7 +244,7 @@ const I18N = {
     "about.kicker": "The founder",
     "about.title": "Behind Coabana",
     "about.p1": "I'm Roanny Lamas, a Data Engineer specialized in the Google Cloud data ecosystem. I founded Coabana to offer, under its own name, what I do best: data platforms that are well designed, well built and well operated.",
-    "about.p2": "I work end to end: architecture, pipelines, governance, BI and AI agents. If your project lives on Google Cloud — or wants to move there — let's talk.",
+    "about.p2": "I work end to end: architecture, pipelines, governance, BI and agents. If your project lives on Google Cloud — or wants to move there — let's talk.",
     "about.link1": "Personal GitHub",
     "about.link3": "Coabana on GitHub",
     "about.link4": "My CV / portfolio",
