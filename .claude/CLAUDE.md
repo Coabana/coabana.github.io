@@ -29,7 +29,7 @@ The content — the page, `404.html` and both dictionaries — is Spanish by def
 
 ## Git identity
 
-Commits are authored as the operator's global git config has it, `Roanny Lamas <roanny.lamaslopez@viajeseci.es>`.
+Commits are authored as `Roanny Lamas <roannylamaslopez@gmail.com>`, set in this checkout's local git config (`git config user.email`) because the operator's global config carries his employer's address; all Coabana work is recorded under the Gmail address. Check `git config user.email` before the first commit in a fresh clone.
 
 ## Index
 
