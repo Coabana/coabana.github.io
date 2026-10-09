@@ -31,13 +31,16 @@ jobs:
       - name: HTML valid
         # The two pages a visitor reaches, through the W3C Nu checker that
         # html5validator bundles (Java ships with the runner). The Search
-        # Console verification file is not a page and is left out.
+        # Console verification file is not a page and is left out. The
+        # bundled checker predates `background-clip: text`, which 404.html
+        # uses and browsers support unprefixed; that one message is ignored.
         if: '!cancelled()'
         shell: bash
         run: |
           python3 -m venv "$RUNNER_TEMP/venv"
           "$RUNNER_TEMP/venv/bin/pip" install --quiet html5validator==0.4.2
-          "$RUNNER_TEMP/venv/bin/html5validator" --files index.html 404.html
+          "$RUNNER_TEMP/venv/bin/html5validator" --files index.html 404.html \
+            --ignore-re 'CSS: "background-clip": "text" is not a "background-clip" value'
 
       - name: i18n keys in parity
         # `js/i18n.js` holds one `es` and one `en` dictionary: the same keys
