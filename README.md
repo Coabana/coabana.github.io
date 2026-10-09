@@ -1,49 +1,73 @@
-# 🌴 Coabana — GitHub Page
+# Coabana — the site
 
-Sitio web de **Coabana**, estudio de ingeniería de datos especializado en **Google Cloud**: qué es la marca, qué servicios ofrece y cómo contactar.
+The public one-page site of **Coabana**, a data-engineering studio specialised in **Google Cloud**: what the brand is, the services it offers, the stack it builds with and how to get in touch. It is plain HTML, CSS and JavaScript with no framework and no build step, served by GitHub Pages at [`https://coabana.github.io/`](https://coabana.github.io/), in Spanish by default with English beside it.
 
-Construido con HTML, CSS y JavaScript puros — sin frameworks ni paso de build. GitHub Pages lo sirve tal cual.
+[![CI](https://github.com/Coabana/coabana.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/Coabana/coabana.github.io/actions/workflows/ci.yml)
 
-## Estructura
+## What it does
 
-```
-├── index.html          # Toda la página (una sola página con secciones)
-├── 404.html            # Página de error
-├── css/style.css       # Estilos (tema caribeño-tech, oscuro y claro)
-├── js/i18n.js          # ✏️ TEXTOS del sitio en español e inglés
-├── js/main.js          # Idioma, menú, animaciones y formulario
-├── DESIGN.md           # 🎨 Tokens y componentes del sistema de diseño
-└── assets/             # Logo y favicon (SVG)
-```
+- **Presents the studio** in one page of sections: the brand, the services, the stack, the method, the founder and contact.
+- **Speaks two languages**: Spanish by default, English on demand, detected from the browser and switchable from the menu.
+- **Follows the visitor's theme**: dark by default, light ("Caribbean by day") on demand, following the system until the visitor chooses.
+- **Takes contact**: a form sent through Formspree, with a `mailto:` fallback.
+- **Is found**: canonical and `hreflang` links, a social card, `robots.txt`, `sitemap.xml` and a Search Console verification.
 
-## Cómo editar los textos
+## Quick start
 
-Todos los textos viven en **`js/i18n.js`**, en dos diccionarios (`es` y `en`) con las mismas claves. Edita el valor de la clave en ambos idiomas y listo. El HTML tiene el texto en español como contenido por defecto (por si JavaScript no carga); si cambias algo grande, actualízalo también en `index.html` para mantenerlos alineados.
-
-El idioma se detecta automáticamente (navegador → `es`/`en`), se puede forzar con `?lang=en` o `?lang=es` en la URL, y el visitante puede cambiarlo con el botón **EN/ES** del menú.
-
-## Tema claro / oscuro
-
-El sitio arranca según la apariencia del sistema del visitante (oscuro por defecto), se puede forzar con `?theme=light` o `?theme=dark` en la URL, y el visitante puede cambiarlo con el botón **🌙/☀️** del menú (la elección se recuerda). El tema claro es la variante "caribe de día": misma paleta sobre arena/papel. Los colores de ambos temas viven en las variables CSS del inicio de `css/style.css`. El sistema completo —tokens, componentes y estados— está documentado en [DESIGN.md](DESIGN.md), la referencia canónica que el sitio del CV replica.
-
-## Formulario de contacto
-
-Conectado a [Formspree](https://formspree.io) (proyecto **Coabana** → formulario *Contacto sitio web*); el endpoint vive en la constante `FORM_ENDPOINT` de `js/main.js`. Los envíos llegan a tu correo. Si algún día el endpoint se vacía o falla, el formulario cae a un `mailto:` con el mensaje ya redactado.
-
-> 💡 Cuando el sitio esté publicado, activa **Restrict to Domain** en los ajustes del proyecto de Formspree con el valor `coabana.github.io` para bloquear envíos desde otros dominios.
-
-## Publicar en GitHub Pages
-
-1. Haz merge de este contenido a la rama `main`.
-2. En GitHub: **Settings → Pages → Build and deployment**.
-3. En *Source* elige **Deploy from a branch**, rama `main`, carpeta `/ (root)` y guarda.
-4. En unos minutos el sitio estará en **`https://coabana.github.io/`**.
-
-> 💡 Este repositorio se llama `coabana.github.io`, así que GitHub Pages lo publica en la **raíz** del dominio de la organización (es el "sitio de organización"; cualquier otro nombre de repo publicaría en un subdirectorio `/nombre/`).
-
-## Probar en local
-
-```bash
+```sh
 python3 -m http.server 8000
-# abre http://localhost:8000
+# open http://localhost:8000/ — add ?lang=en or ?theme=light to force a language or a theme
 ```
+
+## Structure
+
+```
+├── index.html          # The whole page (one page with sections)
+├── 404.html            # The error page
+├── css/style.css       # The styles (the Caribbean-tech theme, dark and light)
+├── js/i18n.js          # ✏️ The site's TEXT in Spanish and English
+├── js/main.js          # Language, menu, animations and the form
+├── DESIGN.md           # 🎨 The design system's tokens and components
+└── assets/             # Logo and favicon
+```
+
+## Editing the text
+
+Every text lives in **`js/i18n.js`**, in two dictionaries (`es` and `en`) with the same keys. Change the key's value in both languages. The HTML carries the Spanish text as its default content (in case JavaScript does not load); when a change is large, update it in `index.html` too so the two stay aligned.
+
+The language is detected automatically (browser → `es`/`en`), can be forced with `?lang=en` or `?lang=es` in the URL, and the visitor can switch it with the **EN/ES** button in the menu.
+
+## Light and dark theme
+
+The site starts from the visitor's system appearance (dark by default), can be forced with `?theme=light` or `?theme=dark` in the URL, and the visitor can switch it with the **🌙/☀️** button in the menu (the choice is remembered). The light theme is the "Caribbean by day" variant: the same palette on sand and paper. Both themes' colours are the CSS custom properties at the top of `css/style.css`. The whole system — tokens, components and states — is documented in [DESIGN.md](DESIGN.md), the canonical reference the CV site ([roanny/roanny.github.io](https://github.com/roanny/roanny.github.io)) mirrors; a token changed here is changed there too.
+
+## Contact form
+
+Connected to [Formspree](https://formspree.io) (project **Coabana** → form *Contacto sitio web*); the endpoint is the `FORM_ENDPOINT` constant in `js/main.js`. Submissions arrive by email. If the endpoint is ever emptied or fails, the form falls back to a `mailto:` with the message already written.
+
+> 💡 Turn on **Restrict to Domain** in the Formspree project's settings with the value `coabana.github.io` to block submissions from other domains.
+
+## Development
+
+There is no build and nothing to install: edit, preview with `python3 -m http.server`, and update `sitemap.xml`'s `lastmod` when the page's content changes.
+
+CI (`Validate`) checks that `index.html` and `404.html` are valid HTML (the W3C Nu checker), that the `es` and `en` dictionaries of `js/i18n.js` carry the same keys and cover every `data-i18n` key `index.html` names, that `sitemap.xml` is well-formed, that the fleet's shared blocks under `.claude/` are unchanged and, on pull requests, that every commit subject is at most 72 characters with no trailing period. Changes land on `main` by fast-forward once `Validate` is green.
+
+## Deployment
+
+GitHub Pages serves `main` from the root (**Settings → Pages → Deploy from a branch**, `main`, `/ (root)`), so every landing on `main` is published within minutes; `.nojekyll` makes Pages serve the files as they are. The repository is named `coabana.github.io`, so Pages publishes it at the root of the organisation's domain.
+
+## Documentation
+
+| File | What it holds |
+|---|---|
+| `DESIGN.md` | The design system: tokens, components and states, shared with the CV site |
+| `.claude/CLAUDE.md` | How a Claude Code session works here |
+
+## The solution
+
+Coabana's product line is the Looker Developer Agent — `looker-agent`, `looker-mcp-server`, `coabana-mcp-toolbox`, `looker-agent-app` and `looker-agent-extension`, deployed for VECI by `looker-agent-deploy` and, as a multi-tenant SaaS, by `coabana-agent-platform` (which also composes `lookerctl`). This repository is the company's public face beside it: it names Google Cloud services, not those products, and ships nothing that runs beyond the page's own script.
+
+## License
+
+No license has been chosen yet; that choice is the operator's.
