@@ -3,6 +3,7 @@
 The public one-page site of **Coabana**, a data-engineering studio specialised in **Google Cloud**: what the brand is, the services it offers, the stack it builds with and how to get in touch. It is plain HTML, CSS and JavaScript with no framework and no build step, served by GitHub Pages at [`https://coabana.github.io/`](https://coabana.github.io/), in Spanish by default with English beside it.
 
 [![CI](https://github.com/Coabana/coabana.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/Coabana/coabana.github.io/actions/workflows/ci.yml)
+[![license](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
 
 ## What it does
 
@@ -45,7 +46,7 @@ The site starts from the visitor's system appearance (dark by default), can be f
 
 Connected to [Formspree](https://formspree.io) (project **Coabana** → form *Contacto sitio web*); the endpoint is the `FORM_ENDPOINT` constant in `js/main.js`. Submissions arrive by email. If the endpoint is ever emptied or fails, the form falls back to a `mailto:` with the message already written.
 
-> 💡 Turn on **Restrict to Domain** in the Formspree project's settings with the value `coabana.github.io` to block submissions from other domains.
+**Restrict to Domain** is set to `coabana.github.io` in the Coabana project, so Formspree accepts submissions only from this domain and its subdomains.
 
 ## Development
 
@@ -70,4 +71,4 @@ Coabana's product line is the Looker Developer Agent — `looker-agent`, `looker
 
 ## License
 
-No license has been chosen yet; that choice is the operator's.
+Apache-2.0 for the code — see [`LICENSE`](LICENSE). The Coabana name, logo and brand texts are not licensed.
