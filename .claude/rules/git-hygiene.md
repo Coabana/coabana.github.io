@@ -7,6 +7,7 @@ Loads in every session: it carries the authorization clause, which has to be pre
 - **Linear history.** A branch lands on `main` by fast-forward, `git push origin <branch>:main`, once `Validate` is green on the pull request's head SHA. No merge commits; `gh pr merge` is denied, because it and the UI button collapse or rewrite the branch's commits.
 - **Landing is publishing.** GitHub Pages serves `main` as it is, so every landing changes the public site within minutes. A change to what a visitor sees is checked in a local preview (`python3 -m http.server`) in both languages and both themes before it lands.
 - **Commit subjects.** The whole first line at most 72 characters, no trailing period; measure it before the push (`printf '%s' "$subject" | wc -m`), because correcting a pushed subject is a force push. CI's "Commit subjects" step reads every commit a pull request adds.
+- **Commit author.** Every commit is authored as `roannylamaslopez@gmail.com`, which this checkout's local `user.email` carries (the global config holds the employer's address); CI's "Commit authors" step refuses any other author but Dependabot's and GitHub's own.
 - **No force push, in any spelling** — `--force`, `-f`, `--force-with-lease`, a `+refspec` — on any branch.
 - **No remote-ref deletion.** Deleting a remote branch or tag is the operator's act. The colon-refspec deletion (`git push origin :<ref>`) has no working deny; the rule is the guard, and the server rulesets on `main`, once the operator adds them, are the floor.
 
