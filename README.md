@@ -34,9 +34,9 @@ python3 -m http.server 8000
 
 ## Editing the text
 
-Every text lives in **`js/i18n.js`**, in two dictionaries (`es` and `en`) with the same keys. Change the key's value in both languages. The HTML carries the Spanish text as its default content (in case JavaScript does not load); when a change is large, update it in `index.html` too so the two stay aligned.
+Every text lives in **`js/i18n.js`**, in two dictionaries (`es` and `en`) with the same keys. Change the key's value in both languages. The HTML carries the Spanish text as its default content (in case JavaScript does not load); when the Spanish text changes, update it in `index.html` too so the two stay aligned.
 
-The language is detected automatically (browser → `es`/`en`), can be forced with `?lang=en` or `?lang=es` in the URL, and the visitor can switch it with the **EN/ES** button in the menu.
+The language can be forced with `?lang=en` or `?lang=es` in the URL; otherwise the visitor's remembered choice applies, and otherwise the browser's language (`es*` → Spanish, anything else → English). The **EN/ES** button in the menu switches it and remembers the choice.
 
 ## Light and dark theme
 
@@ -52,7 +52,7 @@ Connected to [Formspree](https://formspree.io) (project **Coabana** → form *Co
 
 There is no build and nothing to install: edit, preview with `python3 -m http.server`, and update `sitemap.xml`'s `lastmod` when the page's content changes.
 
-CI (`Validate`) checks that `index.html` and `404.html` are valid HTML (the W3C Nu checker), that the `es` and `en` dictionaries of `js/i18n.js` carry the same keys and cover every `data-i18n` key `index.html` names, that `sitemap.xml` is well-formed, that the fleet's shared blocks under `.claude/` are unchanged and, on pull requests, that every commit subject is at most 72 characters with no trailing period. Changes land on `main` by fast-forward once `Validate` is green.
+CI (`Validate`) checks that `index.html` and `404.html` are valid HTML (the W3C Nu checker), that the `es` and `en` dictionaries of `js/i18n.js` carry the same keys and cover every `data-i18n` key `index.html` names, that `sitemap.xml` is well-formed, that the fleet's shared blocks under `.claude/` are unchanged and, on pull requests, that every commit subject is at most 72 characters with no trailing period and, on pull requests and pushes to `main`, that every commit is authored as `roannylamaslopez@gmail.com`. Changes land on `main` by fast-forward once `Validate` is green.
 
 ## Deployment
 
