@@ -29,7 +29,7 @@ python3 -m http.server 8000
 ├── js/i18n.js          # ✏️ The site's TEXT in Spanish and English
 ├── js/main.js          # Language, menu, animations and the form
 ├── DESIGN.md           # 🎨 The design system's tokens and components
-└── assets/             # Logo and favicon
+└── assets/             # The mark: light glyph, tile, favicons, logo
 ```
 
 ## Editing the text
