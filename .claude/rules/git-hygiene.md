@@ -9,7 +9,7 @@ Loads in every session: it carries the authorization clause, which has to be pre
 - **Commit subjects.** The whole first line at most 72 characters, no trailing period; measure it before the push (`printf '%s' "$subject" | wc -m`), because correcting a pushed subject is a force push. CI's "Commit subjects" step reads every commit a pull request adds.
 - **Commit author.** Every commit is authored as `roannylamaslopez@gmail.com`, which this checkout's local `user.email` carries (the global config holds the employer's address); CI's "Commit authors" step refuses any other author but Dependabot's and GitHub's own.
 - **No force push, in any spelling** — `--force`, `-f`, `--force-with-lease`, a `+refspec` — on any branch.
-- **No remote-ref deletion.** Deleting a remote branch or tag is the operator's act. The colon-refspec deletion (`git push origin :<ref>`) has no working deny; the rule is the guard, and the server rulesets on `main`, once the operator adds them, are the floor.
+- **No remote-ref deletion.** Deleting a remote branch or tag is the operator's act. The colon-refspec deletion (`git push origin :<ref>`) has no working deny; the rule is the guard. The floor on `main` is the server: the ruleset "Protect main branch" (no bypass actors) refuses its deletion, a non-fast-forward push and a merge commit, and requires `Validate`, and the classic branch protection beside it forbids force pushes and deletions, admins included (`gh api repos/Coabana/coabana.github.io/rulesets` and `…/branches/main/protection` read them). Other branches have no server floor.
 
 ## Dependabot
 
