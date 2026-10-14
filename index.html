@@ -183,12 +183,14 @@
               <!-- sol -->
               <circle cx="330" cy="56" r="26" fill="var(--coral)" opacity="0.9"/>
               <circle cx="330" cy="56" r="38" stroke="var(--coral)" stroke-opacity="0.25" stroke-width="2"/>
-              <!-- palma monolínea -->
-              <path d="M150 216c2-34-2-62-8-84" stroke="var(--turquoise)" stroke-width="5" stroke-linecap="round"/>
-              <path d="M142 132c-16-12-34-13-48-5 16 2 30 7 44 14" stroke="var(--turquoise)" stroke-width="4" stroke-linecap="round" fill="none"/>
-              <path d="M142 132c-5-19-18-28-34-29 11 9 19 19 26 32" stroke="var(--turquoise)" stroke-width="4" stroke-linecap="round" fill="none"/>
-              <path d="M142 132c5-17 19-25 36-23-12 8-21 15-29 26" stroke="var(--turquoise)" stroke-width="4" stroke-linecap="round" fill="none"/>
-              <path d="M142 132c17-6 34-2 44 9-15-3-28-3-41-1" stroke="var(--turquoise)" stroke-width="4" stroke-linecap="round" fill="none"/>
+              <!-- palma: los trazados del glifo (.brand-glyph) a ×3.5, con peso de ilustración -->
+              <g transform="translate(73 69) scale(3.5)" fill="none" stroke-linecap="round">
+                <path d="M22 42c0-10-1-18-2-24" stroke="url(#heroPalmTrunk)" stroke-width="2"/>
+                <path d="M20 18C14 14 8 14 4 17c6 1 11 3 16 5" stroke="var(--turquoise)" stroke-width="1.714"/>
+                <path d="M20 18c-2-7-7-10-12-10 4 4 7 8 10 12" stroke="var(--turquoise)" stroke-width="1.714"/>
+                <path d="M20 18c2-6 7-9 13-8-5 3-8 6-11 10" stroke="var(--turquoise)" stroke-width="1.714"/>
+                <path d="M20 18c6-2 12 0 15 4-6-1-11-1-15-1" stroke="var(--turquoise)" stroke-width="1.714"/>
+              </g>
               <!-- isla de datos: rejilla de puntos -->
               <g fill="var(--cyan)">
                 <circle cx="96" cy="222" r="3" opacity=".9"/><circle cx="120" cy="218" r="3" opacity=".6"/>
@@ -215,6 +217,9 @@
               <path d="M20 272c24-12 48-12 72 0s48 12 72 0 48-12 72 0 48 12 72 0 48-12 72 0" stroke="var(--cyan)" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" fill="none"/>
               <path d="M40 288c20-10 40-10 60 0s40 10 60 0 40-10 60 0 40 10 60 0 40-10 60 0" stroke="var(--turquoise)" stroke-opacity=".3" stroke-width="3" stroke-linecap="round" fill="none"/>
               <defs>
+                <linearGradient id="heroPalmTrunk" x1="20" y1="18" x2="22" y2="42" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="var(--turquoise)"/><stop offset="1" stop-color="var(--cyan)"/>
+                </linearGradient>
                 <linearGradient id="flowGrad" x1="196" y1="210" x2="316" y2="210" gradientUnits="userSpaceOnUse">
                   <stop offset="0" stop-color="var(--turquoise)"/><stop offset="1" stop-color="var(--coral)"/>
                 </linearGradient>
