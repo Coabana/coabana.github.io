@@ -103,7 +103,7 @@ Cascada idéntica en ambos sitios: **parámetro de URL** (`?theme=` / `?lang=`) 
 
 Este sitio es la **fuente de verdad de la marca de Coabana**, como lo es de los tokens que replica el CV: quien la use fuera de aquí la transcribe de estos archivos y fija sus colores; no la redibuja.
 
-- **El glifo** (sol, palma y ola) es la marca. El wordmark «coabana» vive solo en el sitio (`.brand-name` en la navegación; `assets/logo.svg`, solo sobre fondo oscuro). **Fuera del sitio se usa el glifo solo**, sin wordmark.
+- **El glifo** (sol, palma y ola) es la marca. El wordmark «coabana» vive solo en el sitio (`.brand-name` en la navegación y el pie; `assets/logo.svg`, solo sobre fondo oscuro). **Fuera del sitio se usa el glifo solo**, sin wordmark: también el `logo` de los datos estructurados de `index.html` apunta a `assets/glyph-light.svg`.
 - **Dos variantes**, la misma geometría (`viewBox="0 0 48 48"`, cuadrada):
 
 | Variante | Fondo | Sol | Hojas | Tronco (degradado) | Ola | Fuente |
@@ -111,9 +111,10 @@ Este sitio es la **fuente de verdad de la marca de Coabana**, como lo es de los 
 | Oscura | `--bg` oscuro `#07131d` | `#ff8f6b` | `#2fd6c3` | `#2fd6c3` → `#4cc9f0` | `#4cc9f0` | El glifo en línea de `index.html` (`.brand-glyph`), resuelto con los tokens del tema oscuro |
 | Clara | papel o blanco | `#c94b28` | `#0b8b7d` | `#0b8b7d` → `#0f7ea6` | `#0f7ea6` | `assets/glyph-light.svg`, colores como literales; el id del degradado lleva el prefijo `coabana-glyph-` |
 
-- **Tamaño mínimo: 24 px** de lado; por debajo los trazos de las hojas se funden.
+- **Renderizados derivados, no fuentes**: `assets/logo.svg` (glifo y wordmark en una rejilla de 300 × 72, tronco liso) y `assets/favicon.svg` (sobre una baldosa `#07131d` de 64 × 64, tronco liso, ola más larga) son dibujos anteriores a esta sección. Ninguno se transcribe; la geometría es la de las dos variantes de la tabla.
+- **Tamaño mínimo: 24 px** de lado; por debajo los trazos de las hojas se funden. El favicon (16–32 px) es la excepción, con su baldosa propia.
 - **Espacio libre**: alrededor del cuadrado del glifo, al menos **¼ de su lado** (12 px para un glifo de 48 px) sin texto ni otra marca.
-- **Contraste** (gráficos, mínimo WCAG 3:1): la variante clara sobre `#ffffff` da **4.20 / 4.61 / 4.65 : 1** (`#0b8b7d` / `#0f7ea6` / `#c94b28`), y sobre `--bg` claro `#f7f4ec`, 3.82 / 4.19 / 4.23 : 1; la oscura sobre `#07131d`, 10.29 / 9.75 / 8.39 : 1. Sobre otro fondo se mide antes de usarla.
+- **Contraste** (gráficos, mínimo WCAG 3:1): la variante clara sobre `#ffffff` da **4.20 / 4.61 / 4.65 : 1** (`#0b8b7d` / `#0f7ea6` / `#c94b28`), y sobre `--bg` claro `#f7f4ec`, 3.82 / 4.19 / 4.23 : 1; la oscura sobre `#07131d`, 10.29 / 9.75 / 8.39 : 1 (`#2fd6c3` / `#4cc9f0` / `#ff8f6b`). Sobre otro fondo se mide antes de usarla.
 - **No se altera**: ni recolorear fuera de estas dos variantes, ni deformar, ni girar, ni añadirle contorno o sombra.
 
 ## Accesibilidad
