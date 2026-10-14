@@ -103,7 +103,7 @@ Cascada idéntica en ambos sitios: **parámetro de URL** (`?theme=` / `?lang=`) 
 
 Este sitio es la **fuente de verdad de la marca de Coabana**, como lo es de los tokens que replica el CV: quien la use fuera de aquí la transcribe de estos archivos y fija sus colores; no la redibuja.
 
-- **El glifo** (sol, palma y ola) es la marca. El wordmark «coabana» vive solo en el sitio (`.brand-name` en la navegación y el pie; `assets/logo.svg`, solo sobre fondo oscuro). **Fuera del sitio se usa el glifo solo**, sin wordmark.
+- **El glifo** (sol, palma y ola) es la marca. El wordmark «coabana» vive solo en el sitio (`.brand-name` en la navegación y el pie). **Fuera del sitio se usa el glifo solo**, sin wordmark.
 - **Dos variantes**, la misma geometría (`viewBox="0 0 48 48"`, cuadrada):
 
 | Variante | Fondo | Sol | Hojas | Tronco (degradado) | Ola | Fuente |
@@ -115,7 +115,6 @@ Este sitio es la **fuente de verdad de la marca de Coabana**, como lo es de los 
 - **El favicon** (`assets/favicon.svg`, `assets/favicon-32.png`) es la baldosa dibujada para 16–32 px: los mismos trazados y colores, con trazos más gruesos (tronco 4.2, hojas 3.6, ola 3.4, sol de radio 6.3) y una baldosa más ceñida (48, radio 10.5, `translate(2 -2)`), para que la palma, el sol y la ola sobrevivan en la pestaña. Es la única simplificación declarada del glifo y no se usa por encima de 48 px.
 - **La baldosa lleva su radio dibujado**: no se usa donde la plataforma aplica su propia máscara (`apple-touch-icon`, iconos adaptativos), porque el redondeo se duplicaría.
 - **Los PNG se renderizan con resvg 0.48.1** y son reproducibles byte a byte: `resvg -w 512 -h 512 assets/mark-tile.svg assets/mark-tile-512.png` y `resvg -w 32 -h 32 assets/favicon.svg assets/favicon-32.png`.
-- **`assets/logo.svg`** (glifo y wordmark en una rejilla de 300 × 72, tronco liso) es un dibujo anterior a esta sección que el sitio ya no enlaza: un renderizado derivado que no se transcribe.
 - **La palma del hero** (`.island-svg` en `index.html`) es la palma del glifo a ×3.5 con peso de ilustración (tronco 7, hojas 6, el degradado del tronco) y sin sol ni ola: una ilustración que cita la marca, no una variante ni un peso nuevo del glifo. Es el único uso sancionado de la geometría del glifo como ilustración; si el glifo cambia, cambia con él.
 - **Tamaño mínimo: 24 px** de lado; por debajo los trazos de las hojas se funden. El favicon (16–32 px) es la excepción, con su dibujo propio.
 - **Espacio libre**: alrededor del cuadrado del glifo, al menos **¼ de su lado** (12 px para un glifo de 48 px) sin texto ni otra marca.
