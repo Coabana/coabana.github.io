@@ -118,9 +118,9 @@ const I18N = {
 
     "contact.kicker": "Contacto",
     "contact.title": "Hablemos de tu proyecto",
-    "contact.sub": "Cuéntame qué quieres lograr con tus datos y te respondo con próximos pasos concretos — sin compromiso.",
-    "contact.emailT": "Escríbeme un correo",
-    "contact.liD": "Conecta conmigo",
+    "contact.sub": "Cuéntanos qué quieres lograr con tus datos y te respondemos con próximos pasos concretos — sin compromiso.",
+    "contact.emailT": "Escríbenos un correo",
+    "contact.liD": "Conecta con el fundador",
     "contact.ghD": "Explora el código de Coabana",
 
     "form.name": "Nombre",
@@ -131,8 +131,8 @@ const I18N = {
     "form.msgPh": "¿Qué quieres construir con tus datos?",
     "form.send": "Enviar mensaje",
     "form.sending": "Enviando…",
-    "form.ok": "¡Mensaje enviado! Te responderé pronto.",
-    "form.err": "No se pudo enviar. Escríbeme directo a roannylamaslopez@gmail.com",
+    "form.ok": "¡Mensaje enviado! Te responderemos pronto.",
+    "form.err": "No se pudo enviar. Escríbenos directo a roannylamaslopez@gmail.com",
     "form.mailto": "Abriendo tu aplicación de correo…",
     "form.invalid": "Completa todos los campos antes de enviar.",
 
@@ -253,9 +253,9 @@ const I18N = {
 
     "contact.kicker": "Contact",
     "contact.title": "Let's talk about your project",
-    "contact.sub": "Tell me what you want to achieve with your data and I'll reply with concrete next steps — no strings attached.",
-    "contact.emailT": "Send me an email",
-    "contact.liD": "Connect with me",
+    "contact.sub": "Tell us what you want to achieve with your data and we'll reply with concrete next steps — no strings attached.",
+    "contact.emailT": "Send us an email",
+    "contact.liD": "Connect with the founder",
     "contact.ghD": "Explore Coabana's code",
 
     "form.name": "Name",
@@ -266,8 +266,8 @@ const I18N = {
     "form.msgPh": "What do you want to build with your data?",
     "form.send": "Send message",
     "form.sending": "Sending…",
-    "form.ok": "Message sent! I'll get back to you soon.",
-    "form.err": "Couldn't send. Email me directly at roannylamaslopez@gmail.com",
+    "form.ok": "Message sent! We'll get back to you soon.",
+    "form.err": "Couldn't send. Email us directly at roannylamaslopez@gmail.com",
     "form.mailto": "Opening your email app…",
     "form.invalid": "Please fill in all the fields before sending.",
 
