@@ -1,11 +1,11 @@
 # 🎨 Sistema de diseño "caribeño-tech"
 
-Referencia **canónica** del sistema de diseño compartido por los dos sitios de la familia:
+Espejo del sistema de diseño compartido por los dos sitios de la familia. La referencia **canónica** vive en `brand/DESIGN.md` de `Coabana/coabana-brand` (repositorio privado); este archivo la replica:
 
 - **Coabana** (este repo) — los tokens viven en `css/style.css`
-- **CV** ([roanny/roanny.github.io](https://github.com/roanny/roanny.github.io)) — replica estos tokens en el `<style>` de su `index.html`
+- **CV** ([roanny/roanny.github.io](https://github.com/roanny/roanny.github.io)) — replica los mismos tokens en el `<style>` de su `index.html`
 
-Si cambias un token aquí, replica el cambio en el CV para mantener la familia alineada.
+Un cambio de token entra primero en `coabana-brand`, por pull request, y después se replica aquí y en el CV.
 
 ## Tokens
 
@@ -101,7 +101,7 @@ Cascada idéntica en ambos sitios: **parámetro de URL** (`?theme=` / `?lang=`) 
 
 ## Marca gráfica
 
-Este sitio es la **fuente de verdad de la marca de Coabana**, como lo es de los tokens que replica el CV: quien la use fuera de aquí la transcribe de estos archivos y fija sus colores; no la redibuja.
+La **fuente de verdad de la marca de Coabana** es, como para los tokens, `brand/DESIGN.md` de `coabana-brand`, que esta sección replica. Este sitio sirve los archivos de la marca (`assets/`): quien la use fuera de aquí la transcribe de ellos y fija sus colores; no la redibuja.
 
 - **El glifo** (sol, palma y ola) es la marca. El wordmark «coabana» vive solo en el sitio (`.brand-name` en la navegación y el pie). **Fuera del sitio se usa el glifo solo**, sin wordmark.
 - **Dos variantes**, la misma geometría (`viewBox="0 0 48 48"`, cuadrada):
