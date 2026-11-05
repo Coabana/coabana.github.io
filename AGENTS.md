@@ -8,7 +8,7 @@ The public one-page site of Coabana, a data-engineering studio on Google Cloud: 
 - `js/i18n.js` — the text: the `I18N` object with the `es` and `en` dictionaries, the same keys in both.
 - `js/main.js` — language (URL `?lang=`, then the saved choice, then the browser), theme (URL `?theme=`, then the saved choice, then the system), menu, reveal animations and the contact form (`FORM_ENDPOINT`, Formspree; a `mailto:` fallback).
 - `css/style.css` — the styles; the design tokens of both themes are the custom properties at its top.
-- `DESIGN.md` — the canonical design system: tokens, components and states. It is the design-token source that `roanny/roanny.github.io` (the operator's CV) mirrors by hand in the `<style>` of its `index.html`; a token changed here is reported to that repository, never edited there from here.
+- `DESIGN.md` — the design system: tokens, components and states, a mirror of `brand/DESIGN.md` in `Coabana/coabana-brand` (private), the design-token source of record. A token change enters `coabana-brand` first, by pull request, and is then replicated here and in `roanny/roanny.github.io` (the operator's CV), which mirrors the same tokens by hand in the `<style>` of its `index.html`; the CV is never edited from here.
 - `404.html`, `robots.txt`, `sitemap.xml`, `og-image.jpg`, `assets/`, the verification file above, and `.nojekyll` (Pages serves the files as they are).
 
 ## Previewing and checking

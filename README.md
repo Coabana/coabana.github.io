@@ -62,7 +62,7 @@ GitHub Pages serves `main` from the root (**Settings → Pages → Deploy from a
 
 | File | What it holds |
 |---|---|
-| `DESIGN.md` | The design system: tokens, components and states, shared with the CV site |
+| `DESIGN.md` | The design system: tokens, components and states, mirrored from `brand/DESIGN.md` in `Coabana/coabana-brand` and shared with the CV site |
 | `AGENTS.md` | How any coding agent works here: the tree, the preview and checks, the conventions |
 | `.claude/CLAUDE.md` | How a Claude Code session works here |
 
