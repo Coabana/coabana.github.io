@@ -17,6 +17,12 @@
   --cyan: #4cc9f0;
   --coral: #ff8f6b;
   --sand: #f4d58d;
+  /* Los colores del glifo (.brand-glyph): en oscuro, los acentos; en claro,
+     los literales de la variante clara, que no siguen a los acentos
+     (DESIGN.md § Marca gráfica) */
+  --glyph-coral: var(--coral);
+  --glyph-turquoise: var(--turquoise);
+  --glyph-cyan: var(--cyan);
 
   --grad-sea: linear-gradient(92deg, var(--turquoise), var(--cyan));
   --grad-sunset: linear-gradient(92deg, var(--coral), var(--sand));
@@ -78,10 +84,13 @@
   --line-strong: rgba(9, 55, 66, 0.24);
   --ink: #0d2531;
   --muted: #48616e;
-  --turquoise: #0b8b7d;
-  --cyan: #0f7ea6;
-  --coral: #c94b28;
-  --sand: #8a6a1d;
+  --turquoise: #0a786c;
+  --cyan: #0e7398;
+  --coral: #b94525;
+  --sand: #85661c;
+  --glyph-coral: #c94b28;
+  --glyph-turquoise: #0b8b7d;
+  --glyph-cyan: #0f7ea6;
 
   --shadow: 0 18px 50px rgba(31, 45, 70, 0.14);
   --raise: rgba(9, 55, 66, 0.03);

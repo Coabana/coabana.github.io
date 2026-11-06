@@ -19,10 +19,10 @@ Un cambio de token entra primero en `coabana-brand`, por pull request, y despué
 | `--panel-2` | `#102638` | `#fbf7ee` | Paneles secundarios |
 | `--ink` | `#eaf4f4` | `#0d2531` | Texto principal |
 | `--muted` | `#93adbc` | `#48616e` | Texto secundario |
-| `--turquoise` | `#2fd6c3` | `#0b8b7d` | Acento principal (enlaces, énfasis) |
-| `--cyan` | `#4cc9f0` | `#0f7ea6` | Acento secundario (gradientes) |
-| `--coral` | `#ff8f6b` | `#c94b28` | Kickers, detalles cálidos |
-| `--sand` | `#f4d58d` | `#8a6a1d` | Menciones doradas (honores, "antes se llamaba") |
+| `--turquoise` | `#2fd6c3` | `#0a786c` | Acento principal (enlaces, énfasis) |
+| `--cyan` | `#4cc9f0` | `#0e7398` | Acento secundario (gradientes) |
+| `--coral` | `#ff8f6b` | `#b94525` | Kickers, detalles cálidos |
+| `--sand` | `#f4d58d` | `#85661c` | Menciones doradas (honores, "antes se llamaba") |
 | `--line` / `--line-strong` | turquesa al 10 % / 22 % | tinta al 12 % / 24 % | Bordes |
 
 **Constantes de marca** (idénticas en ambos temas, hardcodeadas a propósito): el gradiente del botón primario `linear-gradient(92deg, #2fd6c3, #4cc9f0)` con texto `#05242a`, y los glows del fondo (`#2fd6c3` / `#ff8f6b` con `--glow-opacity` por tema).
@@ -111,6 +111,8 @@ La **fuente de verdad de la marca de Coabana** es, como para los tokens, `brand/
 | Oscura | `--bg` oscuro `#07131d` | `#ff8f6b` | `#2fd6c3` | `#2fd6c3` → `#4cc9f0` | `#4cc9f0` | El glifo en línea de `index.html` (`.brand-glyph`), resuelto con los tokens del tema oscuro |
 | Clara | papel o blanco | `#c94b28` | `#0b8b7d` | `#0b8b7d` → `#0f7ea6` | `#0f7ea6` | `assets/glyph-light.svg`, colores como literales; el id del degradado lleva el prefijo `coabana-glyph-` |
 
+Los colores de la variante clara son los suyos y no siguen a los acentos del tema claro, que se oscurecieron para el texto: el glifo es un gráfico y le basta 3:1 (ver Contraste). No se recolorea para igualarlo a los tokens.
+
 - **La baldosa** (`assets/mark-tile.svg`, `viewBox="0 0 60 60"`) es un renderizado derivado, no una tercera variante: la variante oscura sin alterar sobre un cuadrado `#07131d` de radio 13 (≈ 22 %). Es el único fondo propio sancionado para la marca, para los huecos que exigen una imagen opaca cuadrada o circular: el `logo` de los datos estructurados de `index.html` (`assets/mark-tile-512.png`), el icono grande (el mismo PNG) y los avatares. El glifo va centrado sobre su trazo, no sobre su caja de 48 (`translate(8 4)`), y cabe entero en el círculo inscrito, así que un recorte redondo no lo corta.
 - **El favicon** (`assets/favicon.svg`, `assets/favicon-32.png`) es la baldosa dibujada para 16–32 px: los mismos trazados y colores, con trazos más gruesos (tronco 4.2, hojas 3.6, ola 3.4, sol de radio 6.3) y una baldosa más ceñida (48, radio 10.5, `translate(2 -2)`), para que la palma, el sol y la ola sobrevivan en la pestaña. Es la única simplificación declarada del glifo y no se usa por encima de 48 px.
 - **La baldosa lleva su radio dibujado**: no se usa donde la plataforma aplica su propia máscara (`apple-touch-icon`, iconos adaptativos), porque el redondeo se duplicaría.
@@ -123,4 +125,4 @@ La **fuente de verdad de la marca de Coabana** es, como para los tokens, `brand/
 
 ## Accesibilidad
 
-`:focus-visible` global · contraste AA en ambos temas (los acentos se oscurecen en claro) · `prefers-reduced-motion` · contenido completo sin JavaScript · `aria-live` en el estado del formulario · favicons: `favicon.svg` + PNG de 32 px y la baldosa en PNG de 512 px (Safari no soporta favicons SVG; Google Search recomienda más de 48 px y no lista SVG).
+`:focus-visible` global · contraste AA en ambos temas (los acentos se oscurecen en claro): `--ink`, `--muted` y los cuatro acentos dan al menos 4.5:1 sobre `--bg`, `--bg-2`, `--panel` y `--panel-2` de su tema; en claro, el mínimo de los acentos es 4.52:1 (`--coral` sobre `--bg-2`) · `prefers-reduced-motion` · contenido completo sin JavaScript · `aria-live` en el estado del formulario · favicons: `favicon.svg` + PNG de 32 px y la baldosa en PNG de 512 px (Safari no soporta favicons SVG; Google Search recomienda más de 48 px y no lista SVG).
