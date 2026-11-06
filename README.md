@@ -8,7 +8,7 @@ The public one-page site of **Coabana**, a data-engineering studio specialised i
 ## What it does
 
 - **Presents the studio** in one page of sections: the brand, the services, the stack, the method, the founder and contact.
-- **Speaks two languages**: Spanish by default, English on demand, detected from the browser and switchable from the menu.
+- **Speaks two languages**: Spanish at `/`, English at `/en/`, each a static page that crawlers and link previews read as it is, switchable from the menu.
 - **Follows the visitor's theme**: dark by default, light ("Caribbean by day") on demand, following the system until the visitor chooses.
 - **Takes contact**: a form sent through Formspree, with a `mailto:` fallback.
 - **Is found**: canonical and `hreflang` links, a social card, `robots.txt`, `sitemap.xml` and a Search Console verification.
@@ -17,26 +17,28 @@ The public one-page site of **Coabana**, a data-engineering studio specialised i
 
 ```sh
 python3 -m http.server 8000
-# open http://localhost:8000/ — add ?lang=en or ?theme=light to force a language or a theme
+# open http://localhost:8000/ (Spanish) or http://localhost:8000/en/ (English); add ?theme=light to force a theme
 ```
 
 ## Structure
 
 ```
-├── index.html          # The whole page (one page with sections)
+├── index.html          # The whole page in Spanish (one page with sections)
+├── en/index.html       # The English page, generated: never edited by hand
 ├── 404.html            # The error page
 ├── css/style.css       # The styles (the Caribbean-tech theme, dark and light)
 ├── js/i18n.js          # ✏️ The site's TEXT in Spanish and English
 ├── js/main.js          # Language, menu, animations and the form
+├── tools/build_en.py   # Generates en/index.html from index.html and js/i18n.js
 ├── DESIGN.md           # 🎨 The design system's tokens and components
 └── assets/             # The mark: light glyph, tile, favicons
 ```
 
 ## Editing the text
 
-Every text lives in **`js/i18n.js`**, in two dictionaries (`es` and `en`) with the same keys. Change the key's value in both languages. The HTML carries the Spanish text as its default content (in case JavaScript does not load); when the Spanish text changes, update it in `index.html` too so the two stay aligned.
+Every text lives in **`js/i18n.js`**, in two dictionaries (`es` and `en`) with the same keys. Change the key's value in both languages. `index.html` carries the Spanish text; when it changes, update it there too so the two stay aligned. Then run `python3 tools/build_en.py`, which writes `en/index.html` with the English text and commit it with the change.
 
-The language can be forced with `?lang=en` or `?lang=es` in the URL; otherwise the visitor's remembered choice applies, and otherwise the browser's language (`es*` → Spanish, anything else → English). The **EN/ES** button in the menu switches it and remembers the choice.
+The page's URL decides its language. The **EN/ES** button in the menu goes to the other page and remembers the choice, so a later visit to `/` by someone who chose English goes to `/en/`. Old links with `?lang=en` or `?lang=es` go to that language's page. The browser's language redirects no one, so search engines read each page as it is. At `/`, a browser in another language that has made no choice is offered a small notice, «This site is also in English →». Once closed, it does not come back.
 
 ## Light and dark theme
 
@@ -52,7 +54,7 @@ Connected to [Formspree](https://formspree.io) (project **Coabana** → form *Co
 
 There is no build and nothing to install: edit, preview with `python3 -m http.server`, and update `sitemap.xml`'s `lastmod` when the page's content changes.
 
-CI (`Validate`) checks that `index.html` and `404.html` are valid HTML (the W3C Nu checker), that the `es` and `en` dictionaries of `js/i18n.js` carry the same keys and cover every `data-i18n` key `index.html` names, that `sitemap.xml` is well-formed, that the fleet's shared blocks under `.claude/` are unchanged and, on pull requests, that every commit subject is at most 72 characters with no trailing period and, on pull requests and pushes to `main`, that every commit is authored as `roannylamaslopez@gmail.com`. Changes land on `main` by fast-forward once `Validate` is green.
+CI (`Validate`) checks that `index.html`, `en/index.html` and `404.html` are valid HTML (the W3C Nu checker), that `en/index.html` is what `tools/build_en.py` generates, that the `es` and `en` dictionaries of `js/i18n.js` carry the same keys and cover every `data-i18n` key `index.html` names, that `sitemap.xml` is well-formed, that the fleet's shared blocks under `.claude/` are unchanged and, on pull requests, that every commit subject is at most 72 characters with no trailing period and, on pull requests and pushes to `main`, that every commit is authored as `roannylamaslopez@gmail.com`. Changes land on `main` by fast-forward once `Validate` is green.
 
 ## Deployment
 

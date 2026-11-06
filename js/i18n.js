@@ -8,6 +8,7 @@ const I18N = {
   es: {
     "meta.title": "Coabana — Ingeniería de Datos en Google Cloud",
     "meta.desc": "Coabana diseña, construye y opera plataformas de datos en Google Cloud: BigQuery, Dataflow, Composer, Looker y agentes sobre tus datos.",
+    "og.desc": "Plataformas de datos en Google Cloud: pipelines confiables, analítica clara y agentes sobre tus propios datos.",
 
     "nav.services": "Servicios",
     "nav.stack": "Stack",
@@ -16,6 +17,8 @@ const I18N = {
     "nav.contact": "Contacto",
     "nav.cta": "Hablemos",
     "nav.menu": "Abrir menú",
+    "nav.home": "Coabana — inicio",
+    "nav.sections": "Secciones",
     "nav.themeLight": "Cambiar a tema claro",
     "nav.themeDark": "Cambiar a tema oscuro",
 
@@ -137,12 +140,14 @@ const I18N = {
     "form.invalid": "Completa todos los campos antes de enviar.",
 
     "footer.tag": "Ingeniería de datos en Google Cloud, con raíz caribeña.",
+    "footer.sections": "Secciones (pie)",
     "footer.made": "Hecho con ☕ y 🌴"
   },
 
   en: {
     "meta.title": "Coabana — Data Engineering on Google Cloud",
     "meta.desc": "Coabana designs, builds and operates data platforms on Google Cloud: BigQuery, Dataflow, Composer, Looker and agents grounded in your data.",
+    "og.desc": "Data platforms on Google Cloud: reliable pipelines, clear analytics and agents grounded in your own data.",
 
     "nav.services": "Services",
     "nav.stack": "Stack",
@@ -151,6 +156,8 @@ const I18N = {
     "nav.contact": "Contact",
     "nav.cta": "Let's talk",
     "nav.menu": "Open menu",
+    "nav.home": "Coabana — home",
+    "nav.sections": "Sections",
     "nav.themeLight": "Switch to light theme",
     "nav.themeDark": "Switch to dark theme",
 
@@ -272,6 +279,7 @@ const I18N = {
     "form.invalid": "Please fill in all the fields before sending.",
 
     "footer.tag": "Data engineering on Google Cloud, with Caribbean roots.",
+    "footer.sections": "Sections (footer)",
     "footer.made": "Made with ☕ and 🌴"
   }
 };

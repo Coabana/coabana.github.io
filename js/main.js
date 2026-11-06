@@ -16,18 +16,68 @@ const FORM_ENDPOINT = "https://formspree.io/f/xgojgbly";
 const CONTACT_EMAIL = "roannylamaslopez@gmail.com";
 
 /* ── Idioma ───────────────────────────────────────────── */
+/* Cada idioma tiene su página: / en español, /en/ en inglés
+   (generada por tools/build_en.py). El idioma lo da la página;
+   cambiarlo es ir a la otra. No se redirige por el idioma del
+   navegador, para que los buscadores lean cada página tal cual. */
 const LANG_KEY = "coabana-lang";
+const PAGE_LANG = document.documentElement.lang === "en" ? "en" : "es";
+const LANG_PATH = { es: "/", en: "/en/" };
 
-function detectLang() {
-  const urlLang = new URLSearchParams(location.search).get("lang");
-  if (urlLang && I18N[urlLang]) return urlLang;
-  const saved = localStorage.getItem(LANG_KEY);
-  if (saved && I18N[saved]) return saved;
-  // es* → español; cualquier otro idioma (o indeterminable) → inglés
-  return (navigator.language || "en").toLowerCase().startsWith("es") ? "es" : "en";
+function langUrl(lang) {
+  const params = new URLSearchParams(location.search);
+  params.delete("lang");
+  const query = params.toString();
+  return LANG_PATH[lang] + (query ? "?" + query : "") + location.hash;
 }
 
-let currentLang = detectLang();
+function savedLang() {
+  try { return localStorage.getItem(LANG_KEY); } catch (e) { return null; }
+}
+
+// ?lang= (los enlaces de antes) manda a la página de ese idioma y queda
+// como elección, para que la raíz no rebote a /en/; en la raíz, la
+// elección guardada del visitante también manda
+const urlLang = new URLSearchParams(location.search).get("lang");
+if (I18N[urlLang]) {
+  try { localStorage.setItem(LANG_KEY, urlLang); } catch (e) { /* modo privado */ }
+}
+const wantedLang = I18N[urlLang] ? urlLang : (PAGE_LANG === "es" && savedLang() === "en" ? "en" : null);
+if (wantedLang && wantedLang !== PAGE_LANG) location.replace(langUrl(wantedLang));
+
+let currentLang = PAGE_LANG;
+
+// En la raíz, a quien tiene el navegador en otro idioma y no ha elegido
+// se le ofrece la página en inglés con un aviso que puede cerrar; no se
+// le redirige
+const HINT_KEY = "coabana-lang-hint";
+function offerEnglish() {
+  if (PAGE_LANG !== "es" || savedLang()) return;
+  if ((navigator.language || "es").toLowerCase().startsWith("es")) return;
+  try { if (localStorage.getItem(HINT_KEY)) return; } catch (e) { return; }
+  const hint = document.createElement("aside");
+  hint.className = "lang-hint";
+  hint.lang = "en";
+  hint.setAttribute("aria-label", "Language");
+  const link = document.createElement("a");
+  link.href = langUrl("en");
+  link.textContent = "This site is also in English →";
+  link.addEventListener("click", () => {
+    try { localStorage.setItem(LANG_KEY, "en"); } catch (e) { /* modo privado */ }
+  });
+  const close = document.createElement("button");
+  close.type = "button";
+  close.className = "lang-hint-close";
+  close.setAttribute("aria-label", "Dismiss");
+  close.textContent = "×";
+  close.addEventListener("click", () => {
+    try { localStorage.setItem(HINT_KEY, "dismissed"); } catch (e) { /* modo privado */ }
+    hint.remove();
+  });
+  hint.append(link, close);
+  document.body.append(hint);
+}
+if (!wantedLang || wantedLang === PAGE_LANG) offerEnglish();
 
 function applyLang(lang) {
   const dict = I18N[lang];
@@ -68,9 +118,8 @@ function applyLang(lang) {
 
 document.getElementById("langToggle").addEventListener("click", () => {
   const next = currentLang === "es" ? "en" : "es";
-  applyLang(next);
-  // Solo la elección manual se guarda; la detección automática no
   try { localStorage.setItem(LANG_KEY, next); } catch (e) { /* modo privado */ }
+  location.href = langUrl(next);
 });
 
 applyLang(currentLang);
