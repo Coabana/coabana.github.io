@@ -1,23 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none" role="img" aria-labelledby="coabana-favicon-title">
   <title id="coabana-favicon-title">Coabana</title>
-  <!-- Coabana's favicon: assets/mark-tile.svg drawn for 16-32 px (DESIGN.md
-       § Marca gráfica). The glyph's paths and colours are the tile's; only the
-       stroke widths and the sun's radius are heavier, and the tile is tighter,
-       so the palm, the sun and the wave survive at tab size. Ids carry the
-       coabana-favicon- prefix. -->
+  <!-- Coabana's favicon: the tile drawn for 16-32 px (DESIGN.md § Marca
+       gráfica). The glyph's paths, colours and centring group are the
+       tile's; only the stroke widths and the sun's radius are heavier, and
+       the tile is tighter (48, radius 10.5), so the palm, the sun and the
+       wave survive at tab size. The heavier strokes move the ink's left
+       edge, so the outer translate(0.37 0) re-centres it on the 48 square.
+       Ids carry the coabana-favicon- prefix. -->
   <defs>
     <linearGradient id="coabana-favicon-trunk" x1="20" y1="18" x2="22" y2="42" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#2fd6c3"/><stop offset="1" stop-color="#4cc9f0"/>
     </linearGradient>
   </defs>
   <rect width="48" height="48" rx="10.5" fill="#07131d"/>
-  <g transform="translate(2 -2)">
-    <circle cx="33" cy="13" r="6.3" fill="#ff8f6b"/>
-    <path d="M22 42c0-10-1-18-2-24" stroke="url(#coabana-favicon-trunk)" stroke-width="4.2" stroke-linecap="round"/>
-    <path d="M20 18C14 14 8 14 4 17c6 1 11 3 16 5" stroke="#2fd6c3" stroke-width="3.6" stroke-linecap="round"/>
-    <path d="M20 18c-2-7-7-10-12-10 4 4 7 8 10 12" stroke="#2fd6c3" stroke-width="3.6" stroke-linecap="round"/>
-    <path d="M20 18c2-6 7-9 13-8-5 3-8 6-11 10" stroke="#2fd6c3" stroke-width="3.6" stroke-linecap="round"/>
-    <path d="M20 18c6-2 12 0 15 4-6-1-11-1-15-1" stroke="#2fd6c3" stroke-width="3.6" stroke-linecap="round"/>
-    <path d="M4 42c4-3 8-3 12 0s8 3 12 0 8-3 12 0" stroke="#4cc9f0" stroke-width="3.4" stroke-linecap="round"/>
+  <g transform="translate(0.37 0)">
+    <g transform="translate(3 -2.075)">
+      <circle cx="33" cy="13" r="6.3" fill="#ff8f6b"/>
+      <path d="M22 42c0-10-1-18-2-24" stroke="url(#coabana-favicon-trunk)" stroke-width="4.2" stroke-linecap="round"/>
+      <path d="M20 18C14 14 8 14 4 17c6 1 11 3 16 5" stroke="#2fd6c3" stroke-width="3.6" stroke-linecap="round"/>
+      <path d="M20 18C18 11 13 8 8 8C11 12.6 15.6 15.4 20 18" stroke="#2fd6c3" stroke-width="3.6" stroke-linecap="round"/>
+      <path d="M20 18C22 12 27 9 33 10C28.4 14 23.6 16.8 20 18" stroke="#2fd6c3" stroke-width="3.6" stroke-linecap="round"/>
+      <path d="M20 18c6-2 12 0 15 4-6-1-11-1-15-1" stroke="#2fd6c3" stroke-width="3.6" stroke-linecap="round"/>
+      <path d="M4 42c4-3 8-3 12 0s8 3 12 0 8-3 12 0" stroke="#4cc9f0" stroke-width="3.4" stroke-linecap="round"/>
+    </g>
   </g>
 </svg>
