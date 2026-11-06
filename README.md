@@ -36,7 +36,7 @@ python3 -m http.server 8000
 
 ## Editing the text
 
-Every text lives in **`js/i18n.js`**, in two dictionaries (`es` and `en`) with the same keys. Change the key's value in both languages. `index.html` carries the Spanish text; when it changes, update it there too so the two stay aligned. Then run `python3 tools/build_en.py`, which writes `en/index.html` with the English text and commit it with the change.
+Every text lives in **`js/i18n.js`**, in two dictionaries (`es` and `en`) with the same keys. Change the key's value in both languages. `index.html` carries the Spanish text; when it changes, update it there too so the two stay aligned. Then run `python3 tools/build_en.py`, which writes `en/index.html` with the English text, and commit it with the change. Run it as well when `og-image.jpg` or `og-image-en.jpg` changes. It versions the cards' URLs (`?v=` plus the first eight hex digits of the file's sha256), because LinkedIn caches a card by its URL.
 
 The page's URL decides its language. The **EN/ES** button in the menu goes to the other page and remembers the choice, so a later visit to `/` by someone who chose English goes to `/en/`. Old links with `?lang=en` or `?lang=es` go to that language's page. The browser's language redirects no one, so search engines read each page as it is. At `/`, a browser in another language that has made no choice is offered a small notice, «This site is also in English →». Once closed, it does not come back.
 

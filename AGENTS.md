@@ -10,7 +10,7 @@ The public one-page site of Coabana, a data-engineering studio on Google Cloud: 
 - `js/main.js` — language (the page's own, `/` or `/en/`; the toggle goes to the other page; `?lang=` and, at `/`, a saved English choice go to `/en/`; the browser's language redirects no one and only shows, at `/`, a notice offering `/en/` that can be dismissed), theme (URL `?theme=`, then the saved choice, then the system), menu, reveal animations and the contact form (`FORM_ENDPOINT`, Formspree; a `mailto:` fallback).
 - `css/style.css` — the styles; the design tokens of both themes are the custom properties at its top.
 - `DESIGN.md` — the design system: tokens, components and states, a mirror of `brand/DESIGN.md` in `Coabana/coabana-brand` (private), the design-token source of record. A token change enters `coabana-brand` first, by pull request, and is then replicated here and in `roanny/roanny.github.io` (the operator's CV), which mirrors the same tokens by hand in the `<style>` of its `index.html`; the CV is never edited from here.
-- `tools/build_en.py` — the generator of `en/index.html` (standard library only; `--check` is CI's sync test).
+- `tools/build_en.py` — the generator of `en/index.html`, standard library only; `--check` is CI's sync test. It also versions the social cards' URLs on both pages (`og-image.jpg?v=<sha8>`), so it runs after a card changes too.
 - `404.html`, `robots.txt`, `sitemap.xml`, `og-image.jpg`, `og-image-en.jpg`, `assets/`, the verification file above, and `.nojekyll` (Pages serves the files as they are).
 
 ## Previewing and checking

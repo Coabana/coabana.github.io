@@ -81,8 +81,9 @@ jobs:
 
       - name: English page in sync
         # `en/index.html` is generated from `index.html` and `js/i18n.js` by
-        # `tools/build_en.py`; a change to either without regenerating it
-        # leaves the English page behind.
+        # `tools/build_en.py`, which also versions the social cards' URLs on
+        # both pages with each JPEG's hash; a text or card change without
+        # rerunning it leaves a page behind.
         if: '!cancelled()'
         shell: bash
         run: python3 tools/build_en.py --check
