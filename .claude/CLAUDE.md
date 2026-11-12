@@ -14,7 +14,7 @@ Before stating a fact about another repository, verify it with the `contract-che
 
 ## Index
 
-- `.claude/rules/git-hygiene.md` — linear history, landing is publishing, the 72-character subject, the commit author, no force push or remote-ref deletion, Dependabot, the round authorization (every session).
+- `.claude/rules/git-hygiene.md` — linear history, landing is publishing, the 72-character subject, the commit author, no force push, remote refs, Dependabot, the fleet's authorization block and this repository's remainder (every session).
 - `.claude/rules/rules-discipline.md` — what a rule file may hold (fleet shared block).
 - `.claude/rules/markdown-docs.md` — the shape of the Markdown working documents (fleet shared block).
 - No commands and no agents: `/release` does not apply (§ Fleet) and there is no code to review beyond the page's script.

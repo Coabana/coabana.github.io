@@ -23,12 +23,12 @@ CI (`Validate`, `.github/workflows/ci.yml`) runs the checks; the HTML one runs l
 
 - **Language.** The content — the page, `404.html` and both dictionaries — is Spanish by default with English beside it, for its audience; the working documents — README, `DESIGN.md`, this file, the rules, code comments and commit subjects — are English.
 - **Commits.** The whole subject line at most 72 characters, no trailing period. Authored as `Roanny Lamas <roannylamaslopez@gmail.com>`, set in this checkout's local git config (`git config user.email`; check it before the first commit in a fresh clone), because the operator's global config carries the employer's address for the client repositories.
-- **Landing.** Work on a branch, open a pull request, and land it on `main` by fast-forward (`git push origin <branch>:main`) once `Validate` is green on its head. No merge commits, no force push, no remote-ref deletion.
+- **Landing.** Work on a branch, open a pull request, and land it on `main` by fast-forward (`git push origin <branch>:main`) once `Validate` is green on its head. No merge commits, no force push, no tag deletion; a merged or superseded branch of one's own is deleted.
 - **Serving.** GitHub Pages deploys `main` from the root ("Deploy from a branch"): there is no release and no tag. Formspree's project settings (the form, Restrict to Domain) live outside the repository and are the operator's.
 
 ## Where the rules live
 
-- `.claude/rules/git-hygiene.md` — the landing, commit and authorization rules in full.
+- `.claude/rules/git-hygiene.md` — the landing and commit rules, the fleet's authorization block and what stays the operator's here.
 - `.claude/rules/markdown-docs.md` and `.claude/rules/rules-discipline.md` — the shape of the working documents and of a rule file.
 - `.claude/CLAUDE.md` — the rest of the repository's instructions and their index.
 
