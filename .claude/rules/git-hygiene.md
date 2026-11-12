@@ -33,6 +33,7 @@ The standing authorization of 2026-09-23 covers this repository's Dependabot hea
 
 - **Landing convention**: a branch, a pull request, and a fast-forward to `main` (§ History and landing) once `Validate` is green on the head SHA and the change has been previewed in both languages and both themes; landing is publishing, and there is no tag and no release.
 - **Gate**: `Validate` (`.github/workflows/ci.yml`); locally, `python3 tools/build_en.py --check` and the `html5validator` command `AGENTS.md` names.
+- **Remote refs**: the deny floor refuses the deletion of a tag by name (`v*` or `refs/tags/*` after `--delete` or `-d`), while a session's own merged or superseded branches are its to delete.
 - **Dependabot**: a patch, minor or digest head lands under § Dependabot above (the standing authorization in `coabana-workspace/handoffs/2026-09-23-operator-dependabot-standing-authorization.md`); a major is the operator's.
 - **The operator's here, because it cannot be undone from this repository**: a change to the Formspree endpoint (`FORM_ENDPOINT` in `js/main.js`), which decides where visitors' messages go; Formspree's project settings and the GitHub Pages settings; the Search Console verification file, which is never renamed or removed.
 
